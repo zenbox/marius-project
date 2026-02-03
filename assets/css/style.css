@@ -65,7 +65,7 @@ h1 {
 .contentinfo address {
   font-style: normal;
 }
-.contentinfo a:link, .contentinfo a:hover, .contentinfo a:active, .contentinfo a:visited {
+.contentinfo a[href], .contentinfo a:hover, .contentinfo a:active, .contentinfo a:visited {
   color: #f5f5f5;
 }
 
@@ -87,14 +87,14 @@ h1 {
 }
 
 body {
-  outline: 2px solid rgba(0, 204, 0, 0.2);
+  outline: 2px solid rgba(0, 204, 0, 0.6666666667);
 }
 body > * {
-  outline: 2px solid rgba(0, 204, 204, 0.2);
+  outline: 2px solid rgba(0, 204, 204, 0.6666666667);
 }
 body > * > * {
-  outline: 2px solid rgba(204, 128, 0, 0.2);
+  outline: 2px solid rgba(204, 128, 0, 0.6666666667);
 }
 body > * > * > * {
-  outline: 2px solid rgba(204, 0, 204, 0.2);
+  outline: 2px solid rgba(204, 0, 204, 0.6666666667);
 }

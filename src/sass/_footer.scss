@@ -24,7 +24,7 @@
 
     // Theme
     a {
-        &:link,
+        &[href],
         &:hover,
         &:active,
         &:visited {
