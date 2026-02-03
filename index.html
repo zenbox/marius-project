@@ -57,7 +57,7 @@
             <form
                 id="ticket"
                 method="get"
-                action="#">
+                action="/ticket-order">
                 <fieldset>
                     <legend>Fahrschein kaufen</legend>
 
@@ -66,14 +66,14 @@
                         id="ticket-destination"
                         type="text"
                         name="ticketDestination"
-                        value="" />
+                        value="Hauptbahnhof" />
 
                     <label for="ticket-date">Datum</label>
                     <input
                         id="ticket-date"
                         type="date"
                         name="ticketDate"
-                        value="" />
+                        value="2026-02-07" />
 
                     <fieldset>
                         <legend>Altersangabe</legend>
@@ -101,6 +101,7 @@
                         <label id="ticket-reduction-label"
                             ><input
                                 type="checkbox"
+                                checked
                                 name="ticketReduction"
                                 id="ticket-reduction" />Ermäßigung</label
                         >
@@ -111,7 +112,11 @@
                             id="ticket-reduction-reason">
                             <option value="pensioner">Renter</option>
                             <option value="disablity">Beeinträchtigung</option>
-                            <option value="bus driver">Busfahrer</option>
+                            <option
+                                value="bus driver"
+                                selected>
+                                Busfahrer
+                            </option>
                         </select>
                     </fieldset>
                     <button type="reset">Zurücksetzen</button>
