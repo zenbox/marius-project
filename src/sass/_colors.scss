@@ -1,0 +1,18 @@
+// Use of colors
+
+.template-1 {
+    body {
+        background-color: $lightgrey-color;
+        color: $dark-color;
+    }
+
+    body > header {
+        background-color: $primary-color;
+        color: $light-color;
+    }
+
+    body > footer {
+        background-color: $darkgrey-color;
+        color: $light-color;
+    }
+}

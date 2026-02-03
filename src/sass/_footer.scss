@@ -1,0 +1,34 @@
+// Footer
+//
+// @package Webapplication
+// @module document
+// @author Michael Reichart <michael.reichart@gfu.net>
+// @since 2026-02-03
+// @version 1.0.0
+// @see i.e. inspired by ... {link to}
+// @license MIT {https://opensource.org/licenses/MIT}
+// @copyright (c) 2026 Michael Reichart, Cologne
+
+.contentinfo {
+    // Reset
+    address {
+        font-style: normal;
+    }
+
+    // Layout
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // States
+
+    // Theme
+    a {
+        &:link,
+        &:hover,
+        &:active,
+        &:visited {
+            color: $on-darkgrey-color;
+        }
+    }
+}

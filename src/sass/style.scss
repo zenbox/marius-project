@@ -1,0 +1,17 @@
+// import of many files
+// base scss files
+@import "variables";
+@import "colors";
+@import "typography";
+
+// template specific styles
+@import "template-1";
+
+// component files
+@import "header";
+@import "footer";
+@import "main";
+@import "navigation";
+
+// theming files
+@import "theme-development";
