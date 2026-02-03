@@ -6,7 +6,7 @@
         <meta charset="UTF-16" />
         <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0, mininmum-scale=0.5, maximum-scale=5.0, user-scalable=yes" />
+            content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=5.0, user-scalable=yes" />
         <title>Fahrkarten online kaufen - myÖNV</title>
         <link
             rel="stylesheet"
@@ -17,7 +17,7 @@
             <div>
                 <a href="/index.html"
                     ><img
-                        src="logo.png"
+                        src="assets/figures/logo.png"
                         alt="Logo von myÖNV"
                 /></a>
             </div>
@@ -52,13 +52,81 @@
             <p class="teaser">
                 Bitte melden Sie sich an, um Ihre Fahrkarten zu kaufen.
             </p>
-            <ul>
+
+            <!-- Fahrschein kaufen -->
+            <form
+                id="ticket"
+                method="get"
+                action="#">
+                <fieldset>
+                    <legend>Fahrschein kaufen</legend>
+
+                    <label for="ticket-destination">Fahrziel</label>
+                    <input
+                        id="ticket-destination"
+                        type="text"
+                        name="ticketDestination"
+                        value="" />
+
+                    <label for="ticket-date">Datum</label>
+                    <input
+                        id="ticket-date"
+                        type="date"
+                        name="ticketDate"
+                        value="" />
+
+                    <fieldset>
+                        <legend>Altersangabe</legend>
+                        <label
+                            ><input
+                                type="radio"
+                                name="ticketAge"
+                                value="adult"
+                                checked
+                                id="ticket-age-adult" />
+                            Erwachsener</label
+                        >
+
+                        <label
+                            ><input
+                                type="radio"
+                                name="ticketAge"
+                                value="child"
+                                id="ticket-age-child" />
+                            Kind</label
+                        >
+                    </fieldset>
+
+                    <fieldset aria-labelledby="ticket-reduction-label">
+                        <label id="ticket-reduction-label"
+                            ><input
+                                type="checkbox"
+                                name="ticketReduction"
+                                id="ticket-reduction" />Ermäßigung</label
+                        >
+
+                        <label for="ticket-reduction-reason">Welche?</label>
+                        <select
+                            name="ticketReductionReason"
+                            id="ticket-reduction-reason">
+                            <option value="pensioner">Renter</option>
+                            <option value="disablity">Beeinträchtigung</option>
+                            <option value="bus driver">Busfahrer</option>
+                        </select>
+                    </fieldset>
+                    <button type="reset">Zurücksetzen</button>
+                    <button type="submit">Fahrschein jetzt kaufen</button>
+                </fieldset>
+            </form>
+            <!-- /Fahrschein kaufen -->
+
+            <!-- <ul>
                 <li>list content 1</li>
                 <li>list content 2</li>
                 <li>list content 3</li>
                 <li>list content 4</li>
                 <li>list content 5</li>
-            </ul>
+            </ul> -->
         </main>
 
         <footer class="contentinfo">
@@ -74,5 +142,6 @@
                 </ul>
             </nav>
         </footer>
+        <script src="assets/js/main.js"></script>
     </body>
 </html>
