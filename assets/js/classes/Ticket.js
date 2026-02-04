@@ -11,7 +11,7 @@
  * @license MIT {https://opensource.org/licenses/MIT}
  * @copyright (c) 2026 Michael Reichart, Cologne
  */
-
+// pure data object handling
 export default class Ticket {
     constructor() {
         this._price = "2.8"
@@ -67,4 +67,6 @@ export default class Ticket {
         const ticketData = await response.json()
         return ticketData.price.amount
     }
+
+
 }

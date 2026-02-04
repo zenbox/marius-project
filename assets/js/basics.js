@@ -183,3 +183,52 @@ console.log(myTicket.price)
 
 // export (in ticket.js)
 // export function setTicketPrice () { ... } 
+
+
+// 1. DOM Manipulation
+// Eine Variable bauen und ein Objekt aus dem DOM zuweisen
+let h1 = document.querySelector("h1")
+h1.textContent = "Hallo myÖNV Welt!"
+
+// h1.forEach((element, index) => {
+//     element.textContent = `Link Nummer ${index + 1}`;
+// });
+
+console.log(h1)
+console.log(typeof h1)
+
+// 2. Event Listener
+let button = document.querySelector("button")
+
+console.log(button)
+console.log(typeof button)
+
+button.addEventListener("click", function () {
+    console.log("Button wurde geklickt!")
+})
+
+
+
+// - - - - - - - - - -
+// FUNCTIONS
+// - - - - - - - - - -
+// Neue Elemente erzeugen, mit Attributen ausrüsten und im DOM verankern
+
+// let priceContainer = document.createElement("div")
+
+let priceContainer = document.querySelector("#ticket-price")
+
+priceContainer.setAttribute("id", "ticket-price")
+priceContainer.setAttribute("class", "my-first my-second")
+
+priceContainer.classList.add("active")
+
+priceContainer.dataset.id = 32
+priceContainer.dataset.name = "price"
+priceContainer.dataset.currency = "EUR"
+
+let price = 42
+
+priceContainer.textContent = `Preis ${price} EUR`
+
+
