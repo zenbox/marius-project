@@ -156,6 +156,7 @@ class Ticket {
 
     set price(amount = 2.8) {
         if (typeof amount !== "number") return
+
         this._price = amount
     }
 
@@ -174,3 +175,11 @@ const myTicket = new Ticket()
 myTicket.price = 5.2
 
 console.log(myTicket.price)
+
+// ES Module
+
+// import - eine andere JS Datei einbinden
+// import {setTicketPrice } from ticket.js
+
+// export (in ticket.js)
+// export function setTicketPrice () { ... } 

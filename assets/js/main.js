@@ -1,3 +1,12 @@
+// Imports
+import Ticket from "./classes/Ticket.js"
+
+// Intance of Ticket class
+const myTicket = new Ticket()
+console.log("Ticket instance:", myTicket)
+
+myTicket.price = "3.5"
+
 /** Javascript Examples
  *
  * @desc
@@ -11,7 +20,9 @@
  * @license MIT {https://opensource.org/licenses/MIT}
  * @copyright (c) 2026 Michael Reichart, Cologne
  */
-
+// - - - - - - - - - -
+// CONFIGURATIONS
+// - - - - - - - - - -
 // 1. DOM Manipulation
 // Eine Variable bauen und ein Objekt aus dem DOM zuweisen
 let h1 = document.querySelector("h1")
@@ -34,45 +45,49 @@ button.addEventListener("click", function () {
     console.log("Button wurde geklickt!")
 })
 
+// - - - - - - - - - -
+// FUNCTIONS
+// - - - - - - - - - -
+
+
+
+// - - - - - - - - - -
+// EVENT CONTROL
+// - - - - - - - - - -
+
 // 3. Server-Kommunikation
 const form = document.querySelector("form#ticket")
 // Eventlistener bei Änderungen im Formular
-form.addEventListener("change", function () {
-    console.log("Formular wurde geändert!")
+
+form.addEventListener("change", function (event) {
+    event.preventDefault()
+
+    const formData = new FormData(form)
+    const queryString = new URLSearchParams(formData).toString()
+
+    // Fetch ticket price from server
+    myTicket.fetchPrice(queryString).then((price) => {
+        console.log("Ticket price:", price)
+        // myPageBuilder.addPriceToDocument(price)
+    })
+
+    // Alternative:
+    // const price = await myTicket.fetchPrice(queryString)
+    // console.log("Ticket price:", price)
+
+    // myPageBuilder.addPriceToDocument(price)
 })
 
 // Event Listener für das Absenden des Formulars
 form.addEventListener("submit", async function (event) {
     event.preventDefault()
-    console.log("Formular wird gleich abgeschickt!")
 
     const formData = new FormData(form)
-
     const queryString = new URLSearchParams(formData).toString()
+
+    const price = await myTicket.fetchPrice(queryString)
     console.log(queryString)
-
-    // Request an den Server
-    const response = await fetch(
-        `http://localhost:3000/ticket-order?${queryString}`,
-        {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-            },
-        }
-    )
-
-    if (!response.ok) {
-        console.error(
-            "Fehler beim Abrufen des Tickets:",
-            response.status,
-            response.statusText
-        )
-        return // Früher Abbruch der Funktion
-    }
-
-    const ticket = await response.json()
-    console.log("Ticket erhalten:", ticket)
+    console.log("Ticket price:", price)
 })
 
 // 4. Validierung / Programmierungslogik
