@@ -42,7 +42,9 @@ form.addEventListener("change", function (event) {
     myTicket.fetchPrice(queryString).then((price) => {
         const priceContainer = myDomBuilder.buildPriceContainer(price)
         const target = document.querySelector("#ticket-price")
+        
         if (!target || !priceContainer) return
+        
         target.replaceChildren(priceContainer)
     })
 })

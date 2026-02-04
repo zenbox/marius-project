@@ -182,8 +182,7 @@ console.log(myTicket.price)
 // import {setTicketPrice } from ticket.js
 
 // export (in ticket.js)
-// export function setTicketPrice () { ... } 
-
+// export function setTicketPrice () { ... }
 
 // 1. DOM Manipulation
 // Eine Variable bauen und ein Objekt aus dem DOM zuweisen
@@ -207,8 +206,6 @@ button.addEventListener("click", function () {
     console.log("Button wurde geklickt!")
 })
 
-
-
 // - - - - - - - - - -
 // FUNCTIONS
 // - - - - - - - - - -
@@ -231,4 +228,30 @@ let price = 42
 
 priceContainer.textContent = `Preis ${price} EUR`
 
+// Parameter in Funktionen
 
+
+// Funktionsdefinition
+function log(param1 ="", param2 = "") {
+    console.log(param1)
+    console.log(param2)
+}
+// Funktionsaufruf
+log("erste Nachricht", "123")
+log("hallo Anna")
+log("123")
+log(42)
+log("ok")
+
+
+
+// Zusammenzählen und Ergebnis zurück
+function add(param1, param2) { 
+    let result = param2 + param2
+    return result
+}
+
+let arg1 = 3
+let arg2 = 4
+let sum = add(arg1, arg2)
+console.log(sum)
