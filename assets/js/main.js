@@ -36,6 +36,12 @@ button.addEventListener("click", function () {
 
 // 3. Server-Kommunikation
 const form = document.querySelector("form#ticket")
+// Eventlistener bei Änderungen im Formular
+form.addEventListener("change", function () {
+    console.log("Formular wurde geändert!")
+})
+
+// Event Listener für das Absenden des Formulars
 form.addEventListener("submit", async function (event) {
     event.preventDefault()
     console.log("Formular wird gleich abgeschickt!")

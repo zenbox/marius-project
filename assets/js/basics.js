@@ -138,3 +138,39 @@ try {
 }
 
 // Ende der Basics.js
+
+// ES-Modul-Syntax
+// Klassen, Objektorientierung
+// Eigenschaften und Methoden
+// Ein Fahrkarten-Klasse
+console.clear()
+
+class Ticket {
+    constructor() {
+        this._price = 0
+        this._destination = ""
+        this._date = new Date()
+        this._ageGroup = ""
+        this._reductionReason = ""
+    }
+
+    set price(amount = 2.8) {
+        if (typeof amount !== "number") return
+        this._price = amount
+    }
+
+    get price() {
+        return this._price
+    }
+
+    print() {}
+    buy() {}
+    storno() {}
+}
+
+// Instanz aus der Klasse erzeugen
+const myTicket = new Ticket()
+
+myTicket.price = 5.2
+
+console.log(myTicket.price)
